@@ -19,5 +19,9 @@ jobs:
     needs: lint
     runs-on: ubuntu-latest
     steps:    
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install dependecies
+        run: npm ci
       - name: Build Project
         run: npm run build
