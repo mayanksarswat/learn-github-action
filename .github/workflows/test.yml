@@ -1,5 +1,5 @@
 name: Run tests
-on: push
+on: push # [push , workflow_dispatch] multiple events trigger
 jobs:
   test: #job name custom
     runs-on: ubuntu-latest
@@ -15,7 +15,7 @@ jobs:
       - name: RUn tests
         run: npm test
   deploy: 
-    needs: test # job name it depends on
+    needs: test # job name it depends on , [multiple jobs]
     runs-on: ubuntu-latest
     steps:
       - name: Get code
