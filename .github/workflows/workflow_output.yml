@@ -33,6 +33,8 @@ jobs:
         with:
           path: ~/.npm # npm created cache
           key: deps-node-modules-${{hashFiles('**/package-lock.json')}} # retrive cache values
+      - name: Install dependecies
+        run: npm ci
       - name: Build Project
         run: npm run build
       - name: Publish JS file name
