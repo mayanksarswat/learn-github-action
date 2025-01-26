@@ -37,9 +37,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get Build artrifacts
-        uses: actions/download-ofartifact@v3
+        uses: actions/download-artifact@v3
         with:
-          name: dist-files
+          name: dist-files # same as artifact step name
       - name : output contents
         run : ls
       - name: Deploy
